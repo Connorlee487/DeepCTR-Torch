@@ -4,12 +4,15 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 REQUIRED_PACKAGES = [
-    'torch>=1.2.0', 'tqdm', 'scikit-learn', 'tensorflow'
+    'torch>=1.13.0; python_version < "3.8"',
+    'torch>=2.4.0; python_version >= "3.8"',
+    'tqdm',
+    'scikit-learn'
 ]
 
 setuptools.setup(
     name="deepctr-torch",
-    version="0.2.9",
+    version="0.3.0",
     author="Weichen Shen",
     author_email="weichenswc@163.com",
     description="Easy-to-use,Modular and Extendible package of deep learning based CTR(Click Through Rate) prediction models with PyTorch",
@@ -19,7 +22,7 @@ setuptools.setup(
     download_url='https://github.com/shenweichen/deepctr-torch/tags',
     packages=setuptools.find_packages(
         exclude=["tests", "tests.models", "tests.layers"]),
-    python_requires=">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",  # '>=3.4',  # 3.4.6
+    python_requires=">=3.7",
     install_requires=REQUIRED_PACKAGES,
     extras_require={
 
@@ -33,12 +36,14 @@ setuptools.setup(
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Software Development',
